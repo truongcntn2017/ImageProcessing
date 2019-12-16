@@ -1,13 +1,8 @@
 import numpy as np
 import cv2
-import os.path
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from utils.prepare_data import read_image
 from Convolution.convolution import Convolution
-
-DIR_PATH = os.path.join(os.path.dirname(__file__), '..')
 
 def gauss2D(shape=(3,3),sigma= 3):
     """
@@ -39,12 +34,9 @@ class Blur:
     """
     self.kernel = self.makeKernel(mode)
     self.image = read_image(path, 1)
-    self.blur_image = Convolution(self.kernel, self.image).image
+    self.blur_image = Convolution(self.kernel, self.image)
 
 if __name__ == '__main__':
-    # image = Blur(os.path.join(DIR_PATH+'/data/lena.png'), 1)
-
-    # cv2.imshow('blur_image',image.blur_image)
-    # cv2.waitKey(0)
+    print("Hello world")
     pass
     
