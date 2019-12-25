@@ -127,15 +127,15 @@ class GeometricTransformation:
     return strings
 
 if __name__ == '__main__':
-    # print('Read image from data direcstory')
-    # image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
+    print('Read image from data direcstory')
+    image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
 
-    # print('Rotation angle = 90')
-    # image_tranformed = GeometricTransformation(image, GeometricMatrix(1, angle=90).items).items
-    # write_image(os.path.join(DIR_PATH+'/data/rotation-90.png'), 1, image_tranformed)
+    print('Rotation angle = 90')
+    image_tranformed = GeometricTransformation(image, GeometricMatrix(1, angle=90).items).items
+    write_image(os.path.join(DIR_PATH+'/data/rotation-90.png'), 1, image_tranformed)
 
-    # print('Scale x2')
-    # image_tranformed = GeometricTransformation(image, GeometricMatrix(3, scale = 2).items).items
-    # write_image(os.path.join(DIR_PATH+'/data/scale-2.png'), 1, image_tranformed)
+    print('Scale x2')
+    image_tranformed = GeometricTransformation(image, GeometricMatrix(3, scale = 2).items).items
+    write_image(os.path.join(DIR_PATH+'/data/scale-2.png'), 1, image_tranformed)
 
     pass

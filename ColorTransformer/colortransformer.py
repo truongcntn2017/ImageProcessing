@@ -113,16 +113,16 @@ class ColorTransformer:
         self.items = self.color_transform()
 
 if __name__ == '__main__':
-    # print("Read image from path")
-    # image = read_image(os.path.join(DIR_PATH+'/data/test.png'), 1)
-    # bright_image = ColorTransformer(image, 1).items
-    # contrast_image = ColorTransformer(image, 2).items
-    # histogram_equalization_image = ColorTransformer(image, 3).items
+    print("Read image from path")
+    image = read_image(os.path.join(DIR_PATH+'/data/test.png'), 1)
+    bright_image = ColorTransformer(image, 1).items
+    contrast_image = ColorTransformer(image, 2).items
+    histogram_equalization_image = ColorTransformer(image, 3).items
     
-    # print("Write image")
-    # write_image(os.path.join(DIR_PATH+'/data/bright-test.png'), 1, bright_image)
-    # write_image(os.path.join(DIR_PATH+'/data/contrast-test.png'), 1, contrast_image)
-    # write_image(os.path.join(DIR_PATH+'/data/histogram_equalization-test.png'), 1, histogram_equalization_image)
+    print("Write image")
+    write_image(os.path.join(DIR_PATH+'/data/bright-test.png'), 1, bright_image)
+    write_image(os.path.join(DIR_PATH+'/data/contrast-test.png'), 1, contrast_image)
+    write_image(os.path.join(DIR_PATH+'/data/histogram_equalization-test.png'), 1, histogram_equalization_image)
     pass
 
 

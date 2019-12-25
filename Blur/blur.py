@@ -58,10 +58,10 @@ class Blur:
     self.items = Convolution(self.kernel, self.image).items
 
 if __name__ == '__main__':
-    # print("Read image from path")
-    # image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
-    # blur_image = Blur(image, 1).items
-    # print("Write blur image")
-    # write_image(os.path.join(DIR_PATH+'/data/blur-lena.png'), 1, blur_image)
+    print("Read image from path")
+    image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
+    blur_image = Blur(image, 1).items
+    print("Write blur image")
+    write_image(os.path.join(DIR_PATH+'/data/blur-lena.png'), 1, blur_image)
     pass
     
