@@ -43,7 +43,7 @@ python3 GeometricTransformer/geometrictransformer.py
 
 
 
-#Reference
+# Reference
 1.   https://stackoverflow.com/questions/29731726/how-to-calculate-a-gaussian-kernel-matrix-efficiently-in-numpy
 
 2. https://towardsdatascience.com/image-geometric-transformation-in-numpy-and-opencv-936f5cd1d315
