@@ -4,11 +4,11 @@ import string
 import cv2
 import os.path
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
-from utils.prepare_data import read_image, write_image
 
 DIR_PATH = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(DIR_PATH)
+
+from utils.prepare_data import read_image, write_image
 
 class GeometricMatrix:
   """
@@ -127,8 +127,8 @@ class GeometricTransformation:
     return strings
 
 if __name__ == '__main__':
-    print('Read image from data direcstory')
-    image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
+    # print('Read image from data direcstory')
+    # image = read_image(os.path.join(DIR_PATH+'/data/lena.png'), 1)
 
     # print('Rotation angle = 90')
     # image_tranformed = GeometricTransformation(image, GeometricMatrix(1, angle=90).items).items

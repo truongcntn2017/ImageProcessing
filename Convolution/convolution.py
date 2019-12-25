@@ -1,7 +1,5 @@
 import numpy as np 
 
-import numpy as np 
-
 class Convolution:
   def convolution_point(self, x: int, y: int, z: int):
     """
