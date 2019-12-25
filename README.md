@@ -4,6 +4,10 @@ Basic about traditional image processing: some operations in image processing
 # Run 
 1. Run by colab
 ## Step 1:
+command: !git clone https://github.com/truongcntn2017/ImageProcessing.git
+## Step 2: 
+
+cd ImageProcessing/
 
 
 #Reference
