@@ -3,11 +3,12 @@ import matplotlib.image as mpimg
 import cv2
 
 
-def read_image(path, mode: int in [1,2,3]):
+def read_image(path, mode: int):
     """
-        path: image in directory;
-        mode: [1, 3], 1 read by cv2, 2 read by mpimg, 3 read by image of pillow;
-        return numpy type
+        This function is read image from path
+        Read by cv2 has parameters: path, mode = 1
+        Read by matplotlib has parameters: path, mode = 2
+        Read by pillow has parameters: path, mode = 3
     """
     try: 
         with open(path) as f:
@@ -17,31 +18,37 @@ def read_image(path, mode: int in [1,2,3]):
                 img = mpimg.imread(path)
             elif mode == 3:
                 img = Image.open(path)
+            else:
+                img = None
+        return img
     except EOFError as e:
         raise(e)
-    return img
 
 
-def write_image(path, mode: int in [1,2,3], img):
+def write_image(path, mode: int, img):
     """
-        path: image in directory,
-        mode: [1, 3], 1 write by cv2, 2 write by mpimg, 3 write by image of pillow
-        return numpy type
+        This function is read image from path
+        Read by cv2 has parameters: path, mode = 1
+        Read by matplotlib has parameters: path, mode = 2
+        Read by pillow has parameters: path, mode = 3
     """
     try:
       if mode == 1:
         cv2.imwrite(path, img)
       elif mode == 2:
         mpimg.imsave(path, img)
-      else:
+      elif mode == 3:
         img.save(path)
+      else:
+         pass
     except EOFError as e:
       raise(e)
 
 # Testing
-
 if __name__ == "__main__":
+    # print("Read image from data directory")
+    # img = read_image('../data/test.png', 1)
+    # print("Write image into data directory")
+    # write_image('../data/test-1.png',1, img)
     pass
-#     img = read_image('../data/test.png', 1)
-#     write_image('../data/test-1.png',1, img)
     

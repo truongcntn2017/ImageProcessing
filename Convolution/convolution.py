@@ -1,7 +1,9 @@
 import numpy as np 
 
+import numpy as np 
+
 class Convolution:
-  def convolution_point(self, x: int, y: int, z: int) -> float:
+  def convolution_point(self, x: int, y: int, z: int):
     """
     """
     kernel_shape = self.kernel.shape
@@ -9,11 +11,11 @@ class Convolution:
 
     for x_kernel in range(kernel_shape[0]):
       for y_kernel in range(kernel_shape[1]):
-        result +=self.kernel[x_kernel,y_kernel]*self.image[x + x_kernel,y + y_kernel,z]
+        result += self.kernel[x_kernel,y_kernel]*self.image[x + x_kernel,y + y_kernel,z]
   
     return result
 
-  def convolution(self) -> np.ndarray:
+  def convolution(self):
     kernel_shape = self.kernel.shape
     image_shape = self.image.shape
     result = []
@@ -32,7 +34,7 @@ class Convolution:
   def __init__(self, kernel: np.ndarray, image: np.ndarray):
     self.kernel = kernel
     self.image = image
-    self.result = self.convolution()
+    self.items = self.convolution()
 
 if __name__ == '__main__':
   pass

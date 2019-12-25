@@ -1,9 +1,24 @@
-
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import os.path
+import sys
+
+DIR_PATH = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(DIR_PATH)
+
+
+from utils.prepare_data import read_image, write_image
+from Convolution.convolution import Convolution
+
 
 class ColorTransformer:
+    """
+    Color transformer is class that can transform
+    Increase bright has parameters: mode = 1, 
+    Increase contrast has parameters: mode = 2,
+    Histogram equalization has parameters: mode = 3
+    """
     def calHistogram(self):
       try:
         image_shape = self.image.shape 
@@ -93,13 +108,22 @@ class ColorTransformer:
             raise(e)
 
     def __init__(self, image: np.ndarray, mode: int in [1, 2, 3]):
-        """
-        image: np.ndarray
-        mode: type of color transformer 1-increase bright, 2-increase contrast, 3- histogram equalization
-        """
         self.image = image
         self.mode = mode
-        self.result = self.color_transform()
+        self.items = self.color_transform()
+
+if __name__ == '__main__':
+    # print("Read image from path")
+    # image = read_image(os.path.join(DIR_PATH+'/data/test.png'), 1)
+    # bright_image = ColorTransformer(image, 1).items
+    # contrast_image = ColorTransformer(image, 2).items
+    # histogram_equalization_image = ColorTransformer(image, 3).items
+    
+    # print("Write image")
+    # write_image(os.path.join(DIR_PATH+'/data/bright-test.png'), 1, bright_image)
+    # write_image(os.path.join(DIR_PATH+'/data/contrast-test.png'), 1, contrast_image)
+    # write_image(os.path.join(DIR_PATH+'/data/histogram_equalization-test.png'), 1, histogram_equalization_image)
+    pass
 
 
 
