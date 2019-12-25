@@ -8,11 +8,6 @@ Original file is located at
 
 #Clone git
 """
-
-!git clone https://github.com/truongcntn2017/ImageProcessing.git
-
-cd ImageProcessing/
-
 """#Import package"""
 
 import numpy as np
@@ -20,8 +15,6 @@ import cv2
 import matplotlib.pyplot as plt
 import os.path
 import sys
-
-from google.colab.patches import cv2_imshow
 
 """#Utils"""
 
@@ -157,11 +150,11 @@ image = read_image('data/lena.png', 1)
 
 mean_blur_image = Blur(image, 1).items
 
-cv2_imshow(mean_blur_image)
+cv2.imshow("Mean blur",mean_blur_image)
 
 gaussian_blur_image = Blur(image, 2).items
 
-cv2_imshow(gaussian_blur_image)
+cv2.imshow("Gaussian_blur",gaussian_blur_image)
 
 """#Color transformer"""
 
@@ -295,9 +288,9 @@ histogram_equalization_image = ColorTransformer(image, 3).items
 
 """##Origin image vs bright image"""
 
-cv2_imshow(image) # Origin image
+cv2.imshow(image) # Origin image
 
-cv2_imshow(bright_image) # Bright image
+cv2.imshow(bright_image) # Bright image
 
 """##Graph origin image vs bright image"""
 
@@ -309,9 +302,9 @@ plt.plot(calHistogram(bright_image));
 
 """##Origin image vs contrast image"""
 
-cv2_imshow(image) # Origin image
+cv2.imshow("Origin",image) # Origin image
 
-cv2_imshow(contrast_image)
+cv2.imshow("Contrast",contrast_image)
 
 """##Graph origin image vs contrast image"""
 
@@ -323,9 +316,9 @@ plt.plot(calHistogram(bright_image));
 
 """##Origin image vs histogram equalization image"""
 
-cv2_imshow(image)
+cv2.imshow("Origin", image)
 
-cv2_imshow(histogram_equalization_image)
+cv2.imshow("Histogram equalization",histogram_equalization_image)
 
 """##Graph origin image vs histogram equalization image"""
 
@@ -449,11 +442,11 @@ image = read_image('data/lena.png', 1)
 
 rotation_image = GeometricTransformation(image, GeometricMatrix(1, angle=90).items).items
 
-cv2_imshow(rotation_image)
+cv2.imshow("Rotation angle = 90",rotation_image)
 
 scale_image = GeometricTransformation(image, GeometricMatrix(3, scale = 2).items).items
 
-cv2_imshow(scale_image)
+cv2.imshow("Scale x2 ",scale_image)
 
 
 
